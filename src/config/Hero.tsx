@@ -84,22 +84,12 @@ export const heroConfig = {
       href: 'https://www.postgresql.org/',
       component: 'PostgreSQL',
     },
-    {
-      name: 'Power BI',
-      href: 'https://powerbi.microsoft.com/',
-      component: 'PowerBI',
-    },
-    {
-      name: 'Tableau',
-      href: 'https://tableau.com/',
-      component: 'Tableau',
-    },
   ],
 
   // Description Configuration
   description: {
     template:
-      'I build interactive web apps using {skills:0}, {skills:1}, {skills:2} and {skills:3}. With a focus on <b>UI</b> design. Enthusiastic about <b>Data Analysis</b> building MVPs and Data Analysis Projects and making data-driven decisions using {skills:4}, {skills:5} and {skills:6}, driven by a keen eye for design.',
+      'I build interactive web apps using {skills:0}, {skills:1}, {skills:2} and {skills:3}. With a focus on <b>UI</b> design. Enthusiastic about <b>Data Analysis</b> building MVPs and Data Analysis Projects and making data-driven decisions using {skills:4}, driven by a keen eye for design.',
   },
 
   // Buttons Configuration
