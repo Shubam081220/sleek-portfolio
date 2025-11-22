@@ -44,11 +44,11 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     isCurrent: true,
-    isBlur: true,
+    isBlur: false,
     company: 'GoodDay',
     position: 'Data Analyst Intern',
     location: 'United States (Remote)',
-    image: '/company/promote.png',
+    image: '/company/Goodday.png',
     description: [
       'Cleaned, transformed and analyzed large datasets using Python, Pandas and SQL, ensuring reliable and structured data pipelines.',
       'Built interactive dashboards for KPI tracking using Tableau & Power BI, improving data visibility for stakeholders.',
@@ -111,9 +111,9 @@ export const experiences: Experience[] = [
   {
     isCurrent: false,
     company: 'Nohitatu Technologies Pvt. Ltd.',
-    position: 'Backend Developer Intern',
+    position: 'Backend Developer (SDE-1) Intern',
     location: 'Chennai, India (On-Site)',
-    image: '/company/upsurge.png',
+    image: '/company/nohitatu.png',
     description: [
       'Developed RESTful APIs and authentication workflows using Node.js and Express.',
       'Improved performance of backend endpoints by optimizing database queries and implementing caching.',
@@ -151,10 +151,10 @@ export const experiences: Experience[] = [
   },
   {
     isCurrent: false,
-    company: 'Quantify India',
+    company: 'Quantiphi India',
     position: 'Data Analyst Trainee',
     location: 'Freelance',
-    image: '/company/prepeasy.png',
+    image: '/company/quantiphi.png',
     description: [
       'Worked closely with senior analysts to understand business metrics and construct structured datasets.',
       'Designed SQL queries to extract, filter and aggregate data across large relational databases.',
@@ -223,7 +223,7 @@ export const experiences: Experience[] = [
     company: 'TechSphere Solutions',
     position: 'SDE-1 (Full Stack) Intern',
     location: 'Mumbai, India (Remote)',
-    image: '/company/expelee.png',
+    image: '/company/techsphere.png',
     description: [
       'Built full-stack modules using React, Node.js, and MongoDB for internal client dashboards.',
       'Developed responsive UI components and improved UX for customer-facing portals.',
