@@ -1,11 +1,22 @@
+// CertificatesGallery.tsx
 'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from './ui/dialog';
-import { certificates } from '@/config/Achievements';
+import { Dialog, DialogContent } from './ui/dialog';
 
-export default function CertificatesGallery() {
+type Certificate = {
+  file: string;
+  title?: string;
+  issuer?: string;
+  date?: string;
+};
+
+interface CertificatesGalleryProps {
+  certificates: Certificate[];
+}
+
+export default function CertificatesGallery({ certificates }: CertificatesGalleryProps) {
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -14,7 +25,13 @@ export default function CertificatesGallery() {
         {certificates.map((cert) => (
           <div key={cert.file} className="cursor-pointer" onClick={() => setActive(cert.file)}>
             <div className="relative w-full h-56 bg-muted/20 rounded overflow-hidden">
-              <Image src={cert.file} alt={cert.title || 'certificate'} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain" />
+              <Image
+                src={cert.file}
+                alt={cert.title || 'certificate'}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-contain"
+              />
             </div>
             <div className="mt-3">
               <h4 className="text-sm font-semibold">{cert.title}</h4>
@@ -24,11 +41,8 @@ export default function CertificatesGallery() {
         ))}
       </div>
 
-      {/* Fullscreen viewer */}
       <Dialog open={!!active} onOpenChange={(open) => { if (!open) setActive(null); }}>
         <DialogContent className="!max-w-[90vw] !max-h-[90vh] p-0 bg-transparent shadow-none rounded-none">
-          {/* Accessible title required by Radix Dialog (hidden visually) */}
-          <DialogTitle className="sr-only">Certificate viewer</DialogTitle>
           <div className="w-full h-[80vh] flex items-center justify-center">
             {active && (
               <div className="relative w-full h-full">

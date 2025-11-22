@@ -8,6 +8,11 @@ import React from 'react';
 import CertificatesGallery from '@/components/CertificatesGallery';
 import { certificates as configuredCertificates } from '@/config/Achievements';
 
+export const metadata: Metadata = {
+  ...getMetadata('/journey/certificates'),
+  robots: { index: true, follow: true },
+};
+
 type Certificate = {
   file: string;
   title?: string;
@@ -15,15 +20,9 @@ type Certificate = {
   date?: string;
 };
 
-export const metadata: Metadata = {
-  ...getMetadata('/journey/certificates'),
-  robots: { index: true, follow: true },
-};
-
 export default function CertificatesPage() {
   const certDir = path.join(process.cwd(), 'public', 'certificates');
   let discovered: Certificate[] = [];
-
   try {
     if (fs.existsSync(certDir)) {
       const files = fs.readdirSync(certDir);
@@ -35,9 +34,9 @@ export default function CertificatesPage() {
     discovered = [];
   }
 
-  const configured = Array.isArray(configuredCertificates) ? configuredCertificates : [];
+  const configured: Certificate[] = Array.isArray(configuredCertificates) ? configuredCertificates : [];
   const map = new Map<string, Certificate>();
-  configured.forEach((c: Certificate) => map.set(c.file, c));
+  configured.forEach((c) => map.set(c.file, c));
   discovered.forEach((d) => {
     if (!map.has(d.file)) map.set(d.file, d);
   });
@@ -56,16 +55,7 @@ export default function CertificatesPage() {
           </p>
         </div>
         <Separator />
-
-        <div className="space-y-8 md:space-y-12">
-          <p className="text-sm text-muted-foreground">
-            Add certificates (PNG/JPEG) to <code className="font-mono">public/certificates</code> or register
-            them in <code className="font-mono">src/config/Achievements.tsx</code>. Files placed in the
-            directory are auto-discovered and displayed here.
-          </p>
-
-          <CertificatesGallery certificates={allCerts} />
-        </div>
+        <CertificatesGallery certificates={allCerts} />
       </div>
     </Container>
   );
