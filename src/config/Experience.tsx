@@ -43,12 +43,11 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    isCurrent: true,
-    isBlur: false,
+    isCurrent: false,
     company: 'GoodDay',
     position: 'Data Analyst Intern',
     location: 'United States (Remote)',
-    image: '/company/Goodday.png',
+    image: '/public/company/Goodday.png',
     description: [
       'Cleaned, transformed and analyzed large datasets using Python, Pandas and SQL, ensuring reliable and structured data pipelines.',
       'Built interactive dashboards for KPI tracking using Tableau & Power BI, improving data visibility for stakeholders.',
@@ -113,7 +112,7 @@ export const experiences: Experience[] = [
     company: 'Nohitatu Technologies Pvt. Ltd.',
     position: 'Backend Developer (SDE-1) Intern',
     location: 'Chennai, India (On-Site)',
-    image: '/company/nohitatu.png',
+    image: '/public/company/nohitatu.png',
     description: [
       'Developed RESTful APIs and authentication workflows using Node.js and Express.',
       'Improved performance of backend endpoints by optimizing database queries and implementing caching.',
@@ -154,7 +153,7 @@ export const experiences: Experience[] = [
     company: 'Quantiphi India',
     position: 'Data Analyst Trainee',
     location: 'Freelance',
-    image: '/company/quantiphi.png',
+    image: '/public/company/quantiphi.png',
     description: [
       'Worked closely with senior analysts to understand business metrics and construct structured datasets.',
       'Designed SQL queries to extract, filter and aggregate data across large relational databases.',
@@ -223,14 +222,14 @@ export const experiences: Experience[] = [
     company: 'TechSphere Solutions',
     position: 'SDE-1 (Full Stack) Intern',
     location: 'Mumbai, India (Remote)',
-    image: '/company/techsphere.png',
+    image: '/public/company/techsphere.png',
     description: [
       'Built full-stack modules using React, Node.js, and MongoDB for internal client dashboards.',
       'Developed responsive UI components and improved UX for customer-facing portals.',
       'Integrated backend APIs, implemented user authentication, and managed database schemas.',
       'Collaborated with designers and backend engineers to deliver end-to-end feature releases.',
     ],
-    startDate: 'May 2023',
+    startDate: 'May 2025',
     endDate: 'July 2025',
     technologies: [
       {
