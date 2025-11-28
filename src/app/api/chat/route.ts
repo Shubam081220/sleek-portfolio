@@ -147,12 +147,6 @@ export async function POST(request: NextRequest) {
           parts: [{ text: systemPrompt }],
           role: 'user',
         },
-        {
-          parts: [
-            { text: '' },
-          ],
-          role: 'model',
-        },
         // Add conversation history
         ...validatedData.history.map((msg) => ({
           ...msg,
