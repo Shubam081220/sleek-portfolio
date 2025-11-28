@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
         },
         {
           parts: [
-            { text: 'I understand. I will act as your portfolio assistant.' },
+            { text: '' },
           ],
           role: 'model',
         },
